@@ -2,15 +2,17 @@ package com.xiehn.reggie.common;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * 通用的返回结果，将服务器端响应的数据最终都会封装成此对象
+ * 实现Serializable接口，让该类可以序列化
  * @param <T>
  */
 @Data
-public class R<T> {
+public class R<T> implements Serializable {
 
     private Integer code; //编码：1成功，0和其它数字为失败
 
